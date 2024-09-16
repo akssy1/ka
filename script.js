@@ -5,18 +5,22 @@ function sorteio() {
   var cont = 0;
   numSort = [];
 
-  while (cont < 6) {
-    let num = Math.random() * 60;
-    num = Math.ceil(num);
-    if (!numSort.includes(num)) {
-      numSort[cont] = num;
-      console.log(numSort);
-      cont++;
+  if (numEsco.length == 6 && numEsco.indexOf(null) == -1) {
+    while (cont < 6) {
+      let num = Math.random() * 60;
+      num = Math.ceil(num);
+      if (!numSort.includes(num)) {
+        numSort[cont] = num;
+        console.log(numSort);
+        cont++;
+      }
     }
-  }
 
-  document.getElementById("sorteados").innerHTML = numSort;
-  contAcertos();
+    document.getElementById("sorteados").innerHTML = numSort;
+    contAcertos();
+  } else {
+    alert("É necessário digitar 6 numeros antes do sorteio!");
+  }
 }
 
 function getValor(valor, pos) {
